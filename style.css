@@ -1,312 +1,81 @@
-html, body {
-    height: 100%;
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&subset=latin-ext');
+@import url("reset.css");
+
+* {
+    box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    padding: 0;
-    font: 400 80%/1.5 helvetica, arial, sans-serif;
-    color: #333;
-    background: #f0f0f0;
+    font: 400 normal 15px/1.5 Rubik, sans-serif;
+    color: #111;
 }
 
-p {
-    line-height: 1.6;
+.content-container {
+    width: 960px;
+    margin: 0 auto;
 }
 
-h2 {
-    margin-top: 0;
-}
-
-code {
-    padding: 4px;
-    font-size: .9em;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    background: #fff;
-}
-
-.gist {
-    margin: 2.75rem 0;
-}
-
-.hidden {
-    display: none;
-}
-
-.fade-in {
-    animation: fade-in .3s;
-}
-
-.dimmed {
-    color: #505050;
-}
-
-.main-header {
-    padding: 0 0 2.4rem;
+.masthead {
+    height: 500px;
+    position: relative;
+    border-bottom: 1px solid #ddd;
     overflow: hidden;
 }
 
-.social-badge {
-    float: right;
-    margin-top: .7em;
-    margin-left: 1em;
+.masthead__name {
+    font-size: 3.6em;
 }
 
-.main-title {
-    margin: 0;
-    margin-bottom: 1rem;
+.masthead__summary {
+    width: 720px;
+    font-size: 1.6em;
+    font-weight: 100;
 }
 
-.main-navigation {
+.masthead__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.masthead__video {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    display: none;
+    transform: translateY(-50%);
+}
+
+.masthead__video--active {
+    display: inline-block;
+}
+
+.masthead__video-buttons {
+    position: absolute;
+    bottom: 0;
+    right: 6.125%;
+    border-top: 1px solid #ddd;;
+    border-right: 1px solid #ddd;;
+}
+
+.masthead__video-button {
+    appearance: none;
+    background: none;
+    font: inherit;
+    color: inherit;
+    border: none;
+    border-left: 1px solid #ddd;;
     float: left;
 }
 
-.search {
-    float: right;
+.masthead__video-button:hover {
+    background: #eee;
 }
 
-@media (max-width: 639px) {
-    .search-input {
-        width: 80px;
-    }
-}
-
-.main-pagination {
-    text-align: center;
-}
-
-.main-contents:blank + .main-pagination--bottom {
-    display: none;
-}
-
-.navigation-item,
-.main-pagination .pagination-item:first-child {
-    margin-right: 2rem;
-}
-
-.pagination-item--real + .pagination-item--placeholder {
-    display: none;
-}
-
-.pagination-item--placeholder {
-    cursor: default;
-    transition: all .2s;
-}
-
-.pagination-item--placeholder:hover {
-    filter: blur(2px);
-}
-
-.main-contents {
-    padding-bottom: 2.4rem;
-}
-
-.main-article {
-    -webkit-column-break-inside: avoid;
-       -moz-column-break-inside:avoid;
-       -moz-page-break-inside:avoid;
-            page-break-inside: avoid;
-    break-inside: avoid-column;
-}
-
-.main-article p,
-.main-footer p {
-    margin: 0;
-    padding: 0;
-}
-
-.main-article:not(.main-article--reblog) figcaption p {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-.main-article--reblog figcaption blockquote {
-    color: orangered;
-    border-left: 5px solid;
-    margin-left: 0;
-    padding: 2em 3em 1em;
-}
-
-.main-article a img {
-    border: 2px solid;
-}
-
-.main-article img {
-    vertical-align: middle;
-}
-
-.photo-container img,
-.video-container img,
-.text-container img,
-.link-thumbnail-container img {
-    max-width: 100%;
-    height: auto;
-}
-
-.text-container {
-    word-break: break-word;
-}
-
-.main-article [id*=tumblr_video_container] {
-    width: 100% !important;
-    height: auto !important;
-}
-
-.main-article [id*=tumblr_video_container] iframe {
-    width: 100%;
-}
-
-.main-article--index [id*=tumblr_video_container] iframe {
-    height: auto;
-}
-
-.main-article--index footer {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row-reverse;
-}
-
-.main-article--permalink footer .tag {
-    margin-right: 1em;
-}
-
-.main-article--permalink footer .date {
-    float: right;
-}
-
-.main-article--permalink p {
-    margin-bottom: 1.75rem;
-}
-
-.main-article--permalink pre {
-    line-height: 2;
-    padding: 1.1rem;
-    margin: 1.45rem 0 1.35rem;
-    background: #333;
-    color: #eee;
-    font-size: 1em;
-}
-
-.main-article--permalink blockquote {
-    margin-top: 0;
-    margin-bottom: 0
-}
-
-.main-article--permalink ul {
-    margin: 1.2rem auto;
-}
-
-.main-article--permalink li {
-    line-height: 1.6;
-}
-
-.main-comments {
-    margin-top: 2.12rem;
-}
-
-.main-footer {
-    padding: 2.4rem 0;
-}
-
-.main-footer__version {
-    font-weight: inherit;
-    font-style: italic;
-    font-size: inherit;
-    margin: 0;
-}
-
-@media (max-width: 479px) {
-    .container {
-        padding: 2rem;
-    }
-
-    .navigation-item {
-        padding: 1em .25em;
-        display: inline-block;
-    }
-
-    .search {
-        display: block;
-        width: 100%;
-        margin: 2rem 0 0;
-        text-align: left;
-    }
-
-    .main-article {
-        padding: 1rem 0;
-    }
-
-    .main-article h2,
-    .main-article figcaption p {
-        margin-bottom: 0;
-        margin-top: 0;
-    }
-}
-
-@media (min-width: 480px) {
-    .container {
-        width: 480px;
-        margin: 0 auto;
-    }
-
-    .main-contents--index {
-        column-count: 2;
-        column-gap: 80px;
-    }
-
-    .main-article {
-        width: 200px;
-        padding: 1.02rem 0;
-    }
-
-    .main-article--permalink {
-        width: 100%;
-    }
-
-    .main-article h2,
-    .main-article figcaption p {
-        margin-bottom: .5rem;
-    }
-
-    .main-article--permalink h2,
-    .main-article--permalink figcaption p {
-        margin-bottom: 1.1rem;
-    }
-
-    .main-header {
-        padding-top: 3rem;
-    }
-
-    .following, .enjoyed {
-        column-count: 2;
-        column-gap: 50px;
-    }
-}
-
-@media (min-width: 640px) {
-    .container {
-        width: 640px;
-    }
-
-    .main-contents--index {
-        column-gap: 40px;
-    }
-
-    .main-article {
-        width: 300px;
-    }
-
-    .main-article--permalink {
-        width: 100%;
-    }
-
-    .main-article--permalink.main-article--text {
-        font-size: 1.35em;
-    }
-}
-
-@keyframes fade-in {
-    from { opacity: 0 }
-    to { opacity: 1 }
+.masthead__video-button:active {
+    background: #ddd;
 }
