@@ -20,7 +20,6 @@ body {
     height: 500px;
     position: relative;
     border-bottom: 1px solid #ddd;
-    overflow: hidden;
 }
 
 .masthead__name {
@@ -42,34 +41,45 @@ body {
     justify-content: center;
 }
 
+.masthead__videos {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
 .masthead__video {
     position: absolute;
     top: 50%;
     right: 0;
-    display: none;
     transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 1s;
 }
 
 .masthead__video--active {
-    display: inline-block;
+    opacity: 1;
 }
 
 .masthead__video-buttons {
     position: absolute;
-    bottom: 0;
-    right: 6.125%;
-    border-top: 1px solid #ddd;;
-    border-right: 1px solid #ddd;;
+    bottom: -1px;
+    right: 3%;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-bottom-color: #fff;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 }
 
 .masthead__video-button {
     appearance: none;
-    background: none;
+    background: #fff;
     font: inherit;
-    color: inherit;
+    color: #666;
     border: none;
-    border-left: 1px solid #ddd;;
     float: left;
+    width: 30px;
 }
 
 .masthead__video-button:hover {
