@@ -24,6 +24,7 @@ h3 {
 
 p {
     font-size: 1.4rem;
+    line-height: 1.7;
     padding: 0 0 1rem;
 }
 
@@ -54,7 +55,7 @@ button {
 .masthead {
     height: 500px;
     position: relative;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #eee;
 }
 
 .masthead__overlay {
@@ -136,13 +137,10 @@ button {
 }
 
 .section {
-    padding: 5em 0 5em;
-    margin-bottom: 5em;
-    border-bottom: 1px solid #eee;
+    padding: 5em 0;
 }
 
 .about-me-section {
-    background: #fafafa;
 }
 
 .works-section {
