@@ -41,19 +41,25 @@ workButtons.forEach(button => {
 
 const changeWorkButtons = document.querySelectorAll('[data-change-work-button]')
 const works = document.querySelectorAll('[data-work]')
+const codePenContainer = document.querySelector('[data-work-container="codepen"]')
 changeWorkButtons.forEach(button => {
   button.addEventListener('click', e => {
-    const activeWork = document.querySelector('.work-container__work--active')
-    const prevWork = activeWork.previousElementSibling
-    const nextWork = activeWork.nextElementSibling
+    const activeWork = document.querySelector('.work--active')
     works.forEach(work => {
-      work.classList.remove('work-container__work--active')
+      work.classList.remove('work--active')
     })
+    const activeIndex = Array.from(works).indexOf(activeWork)
     const isNext = button.dataset.changeWorkButton === 'next'
-    if (isNext) {
-      nextWork.classList.add('work-container__work--active')
-    } else {
-      prevWork.classList.add('work-container__work--active')
-    }
+    const newActiveWork = works[activeIndex + (isNext ? 1 : -1)]
+    newActiveWork.classList.add('work--active')
+    const newActiveIndex = Array.from(works).indexOf(newActiveWork)
+    const hasPrev = works[newActiveIndex - 1]
+    const hasNext = works[newActiveIndex + 1]
+    codePenContainer.classList.toggle('has-prev', hasPrev)
+    codePenContainer.classList.toggle('has-next', hasNext)
+    changeWorkButtons.forEach(btn => {
+      const isNextBtn = btn.dataset.changeWorkButton === 'next'
+      btn.disabled = (isNextBtn && !hasNext) || (!isNextBtn && !hasPrev)
+    })
   })
 })
