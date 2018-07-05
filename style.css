@@ -257,8 +257,11 @@ button {
     height: 32px;
     border-radius: 100%;
     border: 1px solid #ddd;
+    box-shadow:
+        0 0 0 4px #fff,
+        0 0 0 7px transparent;
     transform: scale(0);
-    transition: box-shadow .1s, transform .5s;
+    transition: transform .5s;
 }
 
 .work-container.has-prev .change-work-button--prev {
@@ -290,6 +293,7 @@ button {
     box-shadow:
         0 0 0 2px #fff,
         0 0 0 4px skyblue;
+    transition: box-shadow .3s, transform .5s;
 }
 
 .change-work-button:hover {
