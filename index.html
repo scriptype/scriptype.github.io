@@ -12,31 +12,31 @@
       <div class="masthead">
           <div class="masthead__videos">
               <video
+                  aria-hidden="true"
                   class="masthead__video masthead__video--active"
                   src="orbit.mp4"
                   preload="auto"
                   autoplay muted loop></video>
               <video
-                  class="masthead__video"
-                  src="pattern.mp4"
-                  preload="auto"
-                  autoplay muted loop></video>
-              <video
+                  aria-hidden="true"
                   class="masthead__video"
                   src="organism.mp4"
                   preload="auto"
                   autoplay muted loop></video>
               <video
+                  aria-hidden="true"
                   class="masthead__video"
                   src="arrow.mp4"
                   preload="auto"
                   autoplay muted loop></video>
               <video
+                  aria-hidden="true"
                   class="masthead__video"
                   src="chars.mp4"
                   preload="auto"
                   autoplay muted loop></video>
               <video
+                  aria-hidden="true"
                   class="masthead__video"
                   src="cop.mp4"
                   preload="auto"
@@ -67,21 +67,275 @@
 
       <section class="section about-me-section">
           <div class="content-container">
-              <h2>Who Am I?</h2>
-              <div style="display: none;">
-              <p>TL;DR: A JavaScript Developer with 5+ years working experience.</p>
-              <p>I've been playing with code for 10+ years. I wasn't planning to build a career on writing code, it just happened after I dropped out of university.</p>
-              <p>I'm into all kind of techniques of photography, in love with natural sciences, creating demos and useless stuff with code – just like before I started working professionally.</p>
-              </div>
-              <p>A JavaScript Developer with 5+ years of working experience.</p>
+              <h2 class="section__title">Who Am I?</h2>
+              <p>A JavaScript Developer with 5+ years of working experience, living in Helsinki.</p>
+              <p>Popular science geek. Amateur astro-photographer, modern literature reader, dark coffee drinker. English Language and Literature dropout.</p>
               <p>Technical matters I care most are accessibility, code quality and automation. I use Vim.</p>
-              <p>Popular science geek. Amateur astro-photographer. Modern literature reader, dark coffee drinker. English Language and Literature dropout.</p>
-              <p>Working at <a href="//digitalgoodie.com" target="_blank">Digital Goodie</a>. Some companies previously I worked at: <a href="//protein.tech" target="_blank">Protein</a>, <a href="//vngrs.com" target="_blank">VNGRS</a>, <a href="//adphorus.com" target="_blank">Adphorus</a>, <a href="//evolvedmedia.co.uk" target="_blank">Evolved Media</a>.</p>
-              <p>Turkish, living in Helsinki.</p>
+              <p>Working at <a href="//digitalgoodie.com" target="_blank">Digital Goodie</a>. Previously worked at: <a href="//protein.tech" target="_blank">Protein</a>, <a href="//vngrs.com" target="_blank">VNGRS</a>, <a href="//adphorus.com" target="_blank">Adphorus</a>, <a href="//evolvedmedia.co.uk" target="_blank">Evolved Media</a>.</p>
+          </div>
+      </section>
+
+      <section class="section works-section">
+          <div class="works-section-container content-container">
+              <div class="works-section__video-container">
+                  <video
+                      aria-hidden="true"
+                      class="works-section__video"
+                      src="pattern.mp4"
+                      autoplay muted loop></video>
+              </div>
+              <div class="works-section__overlay">
+                  <h2 class="section__title">Works</h2>
+
+                  <div class="work-buttons-container">
+                      <button
+                          type="button"
+                          class="work-button work-button--active"
+                          data-work-button="codepen">
+                          <svg class="work-button__icon" height="20" viewBox="0 0 1792 1792" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M216 1169l603 402v-359l-334-223zm-62-144l193-129-193-129v258zm819 546l603-402-269-180-334 223v359zm-77-493l272-182-272-182-272 182zm-411-275l334-223v-359l-603 402zm960 93l193 129v-258zm-138-93l269-180-603-402v359zm485-180v546q0 41-34 64l-819 546q-21 13-43 13t-43-13l-819-546q-34-23-34-64v-546q0-41 34-64l819-546q21-13 43-13t43 13l819 546q34 23 34 64z"/></svg>
+                          CodePen
+                      </button>
+
+                      <button
+                          type="button"
+                          class="work-button"
+                          data-work-button="github">
+                          <svg class="work-button__icon" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+                          GitHub
+                      </button>
+
+                      <button
+                          type="button"
+                          class="work-button"
+                          data-work-button="photography">
+                          <svg class="work-button__icon" enable-background="new 0 0 32 32" height="32px" id="Layer_1" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="camera"><path clip-rule="evenodd" d="M16,10.001c-4.419,0-8,3.581-8,8c0,4.418,3.581,8,8,8   c4.418,0,8-3.582,8-8C24,13.583,20.418,10.001,16,10.001z M20.555,21.906c-2.156,2.516-5.943,2.807-8.459,0.65   c-2.517-2.156-2.807-5.944-0.65-8.459c2.155-2.517,5.943-2.807,8.459-0.65C22.42,15.602,22.711,19.391,20.555,21.906z" fill="#333333" fill-rule="evenodd"/><path clip-rule="evenodd" d="M16,14.001c-2.209,0-3.999,1.791-4,3.999v0.002   c0,0.275,0.224,0.5,0.5,0.5s0.5-0.225,0.5-0.5V18c0.001-1.656,1.343-2.999,3-2.999c0.276,0,0.5-0.224,0.5-0.5   S16.276,14.001,16,14.001z" fill="#333333" fill-rule="evenodd"/><path clip-rule="evenodd" d="M29.492,9.042l-4.334-0.723l-1.373-3.434   C23.326,3.74,22.232,3,21,3H11C9.768,3,8.674,3.74,8.214,4.886L6.842,8.319L2.509,9.042C1.055,9.283,0,10.527,0,12v15   c0,1.654,1.346,3,3,3h26c1.654,0,3-1.346,3-3V12C32,10.527,30.945,9.283,29.492,9.042z M30,27c0,0.553-0.447,1-1,1H3   c-0.553,0-1-0.447-1-1V12c0-0.489,0.354-0.906,0.836-0.986l5.444-0.907l1.791-4.478C10.224,5.25,10.591,5,11,5h10   c0.408,0,0.775,0.249,0.928,0.629l1.791,4.478l5.445,0.907C29.646,11.094,30,11.511,30,12V27z" fill="#333333" fill-rule="evenodd"/></g></svg>
+                          Photography
+                      </button>
+                  </div>
+
+                  <div class="works-container">
+
+                      <div
+                          class="work-container work-container--active"
+                          data-work-container="codepen">
+
+                          <section data-work class="work-container__work work-container__work--active">
+                              <header class="work-container__work-header">
+                                  <h3 class="work-container__work-title">
+                                      Visualizing The Earth's Orbit & Seasons
+                                  </h3>
+                                  <button
+                                      type="button"
+                                      class="work-container__work-button"
+                                      data-change-work-button="next">
+                                      <svg enable-background="new 0 0 50 50" height="10px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="10px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect fill="none" height="50" width="50"/><polygon points="15,2.75 12.914,4.836 33.078,25 12.914,45.164 15,47.25 37.25,25 "/></svg>
+                                  </button>
+                              </header>
+                              <p data-height="560" data-theme-id="light" data-slug-hash="KeEQoG" data-default-tab="result" data-user="pavlovsk" data-embed-version="2" data-pen-title="Visualizing The Earth's Orbit & Seasons" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/pavlovsk/pen/KeEQoG/">Visualizing The Earth's Orbit & Seasons</a> by Mustafa Enes (<a href="https://codepen.io/pavlovsk">@pavlovsk</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                              <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+                          </section>
+
+                          <section data-work class="work-container__work">
+                              <header class="work-container__work-header">
+                                  <button
+                                      type="button"
+                                      class="work-container__work-button"
+                                      data-change-work-button="prev">
+    <svg enable-background="new 0 0 50 50" height="10px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="10px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect fill="none" height="50" width="50"/><polygon points="35,47.25 37.086,45.164 16.922,25 37.086,4.836 35,2.75 12.75,25 "/><rect fill="none" height="50" width="50"/></svg>
+                                  </button>
+                                  <h3 class="work-container__work-title">
+                                      Dreams
+                                  </h3>
+                                  <button
+                                      type="button"
+                                      class="work-container__work-button"
+                                      data-change-work-button="next">
+                                      <svg enable-background="new 0 0 50 50" height="10px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="10px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect fill="none" height="50" width="50"/><polygon points="15,2.75 12.914,4.836 33.078,25 12.914,45.164 15,47.25 37.25,25 "/></svg>
+                                  </button>
+                              </header>
+                              <p data-height="560" data-theme-id="light" data-slug-hash="BwYYaz" data-default-tab="result" data-user="pavlovsk" data-embed-version="2" data-pen-title="Dreams" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/pavlovsk/pen/BwYYaz/">Dreams</a> by Mustafa Enes (<a href="https://codepen.io/pavlovsk">@pavlovsk</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                          </section>
+
+                          <section data-work class="work-container__work">
+                              <header class="work-container__work-header">
+                                  <button
+                                      type="button"
+                                      class="work-container__work-button"
+                                      data-change-work-button="prev">
+    <svg enable-background="new 0 0 50 50" height="10px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="10px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect fill="none" height="50" width="50"/><polygon points="35,47.25 37.086,45.164 16.922,25 37.086,4.836 35,2.75 12.75,25 "/><rect fill="none" height="50" width="50"/></svg>
+                                  </button>
+                                  <h3 class="work-container__work-title">
+                                      Color Contrast Visualisation
+                                  </h3>
+                                  <button
+                                      type="button"
+                                      class="work-container__work-button"
+                                      data-change-work-button="next">
+                                      <svg enable-background="new 0 0 50 50" height="10px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="10px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect fill="none" height="50" width="50"/><polygon points="15,2.75 12.914,4.836 33.078,25 12.914,45.164 15,47.25 37.25,25 "/></svg>
+                                  </button>
+                              </header>
+                              <p data-height="560" data-theme-id="light" data-slug-hash="Brboxj" data-default-tab="result" data-user="pavlovsk" data-embed-version="2" data-pen-title="Color Contrast Visualisation" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/pavlovsk/pen/Brboxj/">Color Contrast Visualisation</a> by Mustafa Enes (<a href="https://codepen.io/pavlovsk">@pavlovsk</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                          </section>
+
+                          <section data-work class="work-container__work">
+                              <header class="work-container__work-header">
+                                  <button
+                                      type="button"
+                                      class="work-container__work-button"
+                                      data-change-work-button="prev">
+    <svg enable-background="new 0 0 50 50" height="10px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="10px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect fill="none" height="50" width="50"/><polygon points="35,47.25 37.086,45.164 16.922,25 37.086,4.836 35,2.75 12.75,25 "/><rect fill="none" height="50" width="50"/></svg>
+                                  </button>
+                                  <h3 class="work-container__work-title">
+                                      Game of Life on Earth
+                                  </h3>
+                                  <button
+                                      type="button"
+                                      class="work-container__work-button"
+                                      data-change-work-button="next">
+                                      <svg enable-background="new 0 0 50 50" height="10px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="10px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect fill="none" height="50" width="50"/><polygon points="15,2.75 12.914,4.836 33.078,25 12.914,45.164 15,47.25 37.25,25 "/></svg>
+                                  </button>
+                              </header>
+                              <p data-height="560" data-theme-id="light" data-slug-hash="prgLVo" data-default-tab="result" data-user="pavlovsk" data-embed-version="2" data-pen-title="Game of Life on Earth" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/pavlovsk/pen/prgLVo/">Game of Life on Earth</a> by Mustafa Enes (<a href="https://codepen.io/pavlovsk">@pavlovsk</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                          </section>
+
+                          <section data-work class="work-container__work">
+                              <header class="work-container__work-header">
+                                  <button
+                                      type="button"
+                                      class="work-container__work-button"
+                                      data-change-work-button="prev">
+    <svg enable-background="new 0 0 50 50" height="10px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="10px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect fill="none" height="50" width="50"/><polygon points="35,47.25 37.086,45.164 16.922,25 37.086,4.836 35,2.75 12.75,25 "/><rect fill="none" height="50" width="50"/></svg>
+                                  </button>
+                                  <h3 class="work-container__work-title">
+                                      &lt;Saturn /&gt; CSSed
+                                  </h3>
+                                  <button
+                                      type="button"
+                                      class="work-container__work-button"
+                                      data-change-work-button="next">
+                                      <svg enable-background="new 0 0 50 50" height="10px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="10px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect fill="none" height="50" width="50"/><polygon points="15,2.75 12.914,4.836 33.078,25 12.914,45.164 15,47.25 37.25,25 "/></svg>
+                                  </button>
+                              </header>
+                              <p data-height="560" data-theme-id="light" data-slug-hash="xOmdBO" data-default-tab="result" data-user="pavlovsk" data-embed-version="2" data-pen-title="<Saturn /> CSSed" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/pavlovsk/pen/xOmdBO/">&lt;Saturn /&rt; CSSed</a> by Mustafa Enes (<a href="https://codepen.io/pavlovsk">@pavlovsk</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                          </section>
+
+                          <section data-work class="work-container__work">
+                              <header class="work-container__work-header">
+                                  <button
+                                      type="button"
+                                      class="work-container__work-button"
+                                      data-change-work-button="prev">
+    <svg enable-background="new 0 0 50 50" height="10px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="10px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect fill="none" height="50" width="50"/><polygon points="35,47.25 37.086,45.164 16.922,25 37.086,4.836 35,2.75 12.75,25 "/><rect fill="none" height="50" width="50"/></svg>
+                                  </button>
+                                  <h3 class="work-container__work-title">
+                                      Moon CSS'd
+                                  </h3>
+                                  <button
+                                      type="button"
+                                      class="work-container__work-button"
+                                      data-change-work-button="next">
+                                      <svg enable-background="new 0 0 50 50" height="10px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="10px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect fill="none" height="50" width="50"/><polygon points="15,2.75 12.914,4.836 33.078,25 12.914,45.164 15,47.25 37.25,25 "/></svg>
+                                  </button>
+                              </header>
+                              <p data-height="560" data-theme-id="dark" data-slug-hash="MOONrR" data-default-tab="result" data-user="pavlovsk" data-embed-version="2" data-pen-title="Moon CSS'd" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/pavlovsk/pen/MOONrR/">Moon CSS'd</a> by Mustafa Enes (<a href="https://codepen.io/pavlovsk">@pavlovsk</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                          </section>
+
+                          <section data-work class="work-container__work">
+                              <header class="work-container__work-header">
+                                  <button
+                                      type="button"
+                                      class="work-container__work-button"
+                                      data-change-work-button="prev">
+    <svg enable-background="new 0 0 50 50" height="10px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="10px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect fill="none" height="50" width="50"/><polygon points="35,47.25 37.086,45.164 16.922,25 37.086,4.836 35,2.75 12.75,25 "/><rect fill="none" height="50" width="50"/></svg>
+                                  </button>
+                                  <h3 class="work-container__work-title">
+                                      Life
+                                  </h3>
+                                  <button
+                                      type="button"
+                                      class="work-container__work-button"
+                                      data-change-work-button="next">
+                                      <svg enable-background="new 0 0 50 50" height="10px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="10px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect fill="none" height="50" width="50"/><polygon points="15,2.75 12.914,4.836 33.078,25 12.914,45.164 15,47.25 37.25,25 "/></svg>
+                                  </button>
+                              </header>
+                              <p data-height="560" data-theme-id="light" data-slug-hash="eGpByg" data-default-tab="result" data-user="pavlovsk" data-embed-version="2" data-pen-title="Life" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/pavlovsk/pen/eGpByg/">Life</a> by Mustafa Enes (<a href="https://codepen.io/pavlovsk">@pavlovsk</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                          </section>
+
+                          <section data-work class="work-container__work">
+                              <header class="work-container__work-header">
+                                  <button
+                                      type="button"
+                                      class="work-container__work-button"
+                                      data-change-work-button="prev">
+    <svg enable-background="new 0 0 50 50" height="10px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="10px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect fill="none" height="50" width="50"/><polygon points="35,47.25 37.086,45.164 16.922,25 37.086,4.836 35,2.75 12.75,25 "/><rect fill="none" height="50" width="50"/></svg>
+                                  </button>
+                                  <h3 class="work-container__work-title">
+                                      Pixel-art sky remade in CSS
+                                  </h3>
+                                  <button
+                                      type="button"
+                                      class="work-container__work-button"
+                                      data-change-work-button="next">
+                                      <svg enable-background="new 0 0 50 50" height="10px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="10px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect fill="none" height="50" width="50"/><polygon points="15,2.75 12.914,4.836 33.078,25 12.914,45.164 15,47.25 37.25,25 "/></svg>
+                                  </button>
+                              </header>
+                              <p data-height="560" data-theme-id="light" data-slug-hash="BLaoNE" data-default-tab="result" data-user="pavlovsk" data-embed-version="2" data-pen-title="Pixel-art sky remade in CSS" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/pavlovsk/pen/BLaoNE/">Pixel-art sky remade in CSS</a> by Mustafa Enes (<a href="https://codepen.io/pavlovsk">@pavlovsk</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                          </section>
+
+                          <section data-work class="work-container__work">
+                              <header class="work-container__work-header">
+                                  <button
+                                      type="button"
+                                      class="work-container__work-button"
+                                      data-change-work-button="prev">
+    <svg enable-background="new 0 0 50 50" height="10px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="10px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect fill="none" height="50" width="50"/><polygon points="35,47.25 37.086,45.164 16.922,25 37.086,4.836 35,2.75 12.75,25 "/><rect fill="none" height="50" width="50"/></svg>
+                                  </button>
+                                  <h3 class="work-container__work-title">
+                                      Simplex Life v3
+                                  </h3>
+                                  <button
+                                      type="button"
+                                      class="work-container__work-button"
+                                      data-change-work-button="next">
+                                      <svg enable-background="new 0 0 50 50" height="10px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="10px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect fill="none" height="50" width="50"/><polygon points="15,2.75 12.914,4.836 33.078,25 12.914,45.164 15,47.25 37.25,25 "/></svg>
+                                  </button>
+                              </header>
+                              <p data-height="560" data-theme-id="light" data-slug-hash="MVVYZx" data-default-tab="result" data-user="pavlovsk" data-embed-version="2" data-pen-title="Simplex Life v3" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/pavlovsk/pen/MVVYZx/">Simplex Life v3</a> by Mustafa Enes (<a href="https://codepen.io/pavlovsk">@pavlovsk</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                          </section>
+
+                          <section data-work class="work-container__work">
+                              <header class="work-container__work-header">
+                                  <button
+                                      type="button"
+                                      class="work-container__work-button"
+                                      data-change-work-button="prev">
+    <svg enable-background="new 0 0 50 50" height="10px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="10px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect fill="none" height="50" width="50"/><polygon points="35,47.25 37.086,45.164 16.922,25 37.086,4.836 35,2.75 12.75,25 "/><rect fill="none" height="50" width="50"/></svg>
+                                  </button>
+                                  <h3 class="work-container__work-title">
+                                      Fourier [css] Transform (with frequencies)
+                                  </h3>
+                              </header>
+                              <p data-height="560" data-theme-id="light" data-slug-hash="aWGGgW" data-default-tab="result" data-user="pavlovsk" data-embed-version="2" data-pen-title="Fourier [css] Transform (with frequencies)" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/pavlovsk/pen/aWGGgW/">Fourier [css] Transform (with frequencies)</a> by Mustafa Enes (<a href="https://codepen.io/pavlovsk">@pavlovsk</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                          </section>
+
+                      </div>
+
+                      <div
+                          class="work-container"
+                          data-work-container="github">
+                          github
+                      </div>
+
+                      <div
+                          class="work-container"
+                          data-work-container="photography">
+                          photography
+                      </div>
+
+              </div>
           </div>
       </section>
 
       <script src="/app.js"></script>
-
   </body>
 </html>
