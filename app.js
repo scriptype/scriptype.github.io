@@ -25,16 +25,16 @@ prevBtn.addEventListener('click', e => {
 })
 
 
-const workButtons = document.querySelectorAll('[data-work-button]')
+const worksButtons = document.querySelectorAll('[data-works-button]')
 const workContainers = document.querySelectorAll('[data-work-container]')
-workButtons.forEach(button => {
+worksButtons.forEach(button => {
   const container = Array.from(workContainers).find(container => {
-    return container.dataset.workContainer === button.dataset.workButton
+    return container.dataset.workContainer === button.dataset.worksButton
   })
   button.addEventListener('click', e => {
-    workButtons.forEach(btn => btn.classList.remove('work-button--active'))
+    worksButtons.forEach(btn => btn.classList.remove('works-button--active'))
     workContainers.forEach(con => con.classList.remove('work-container--active'))
-    button.classList.add('work-button--active')
+    button.classList.add('works-button--active')
     container.classList.add('work-container--active')
   })
 })
