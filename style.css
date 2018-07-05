@@ -145,6 +145,11 @@ button {
     background: #fafafa;
 }
 
+.works-section {
+    overflow: hidden;
+    overflow-y: visible;
+}
+
 .works-section-container {
     position: relative;
 }
@@ -233,8 +238,7 @@ button {
 
 .works-container {
     position: relative;
-    height: 720px;
-    overflow-x: hidden;
+    min-height: 720px;
 }
 
 .work-container {
@@ -342,4 +346,20 @@ button {
     line-height: 24px;
     text-transform: uppercase;
     letter-spacing: 0.2em;
+}
+
+.github-content {
+    padding: 2em 0;
+}
+
+.github-item {
+    padding: 1em;
+}
+
+.github-item__title {
+    font-size: 1.4em;
+}
+
+.github-item p {
+    font-size: 1.2em;
 }
