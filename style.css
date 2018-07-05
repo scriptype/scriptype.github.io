@@ -310,7 +310,7 @@ button {
     flex-direction: column;
     justify-content: space-evenly;
     transform: translateX(-100%);
-    transition: all .5s;
+    transition: transform .6s .1s, opacity .4s;
 }
 
 .work--active ~ .work {
@@ -320,6 +320,7 @@ button {
 .work--active {
     opacity: 1;
     transform: translateX(0);
+    transition: transform .4s, opacity .6s .1s;
 }
 
 .work-title {
