@@ -115,13 +115,13 @@ button {
     right: 3%;
     overflow: hidden;
     border: 1px solid #ddd;
-    border-bottom-color: #fff;
+    border-bottom-color: #fafafa;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
 }
 
 .masthead__video-button {
-    background: #fff;
+    background: #fafafa;
     color: #666;
     float: left;
     width: 30px;
@@ -136,7 +136,13 @@ button {
 }
 
 .section {
-    margin: 5em 0 10em;
+    padding: 5em 0 5em;
+    margin-bottom: 5em;
+    border-bottom: 1px solid #eee;
+}
+
+.about-me-section {
+    background: #fafafa;
 }
 
 .works-section-container {
