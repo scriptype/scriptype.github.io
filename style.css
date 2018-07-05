@@ -174,7 +174,7 @@ button {
     font-size: 1.2em;
     padding: .75em 1.5em;
     min-width: 160px;
-    transition: all .3s;
+    transition: all .5s;
 }
 
 .works-button:focus {
@@ -202,7 +202,7 @@ button {
     height: 1px;
     width: 100%;
     background: #aaa;
-    animation: works-button-line .3s forwards;
+    animation: works-button-line .5s forwards;
 }
 
 .works-button__icon {
