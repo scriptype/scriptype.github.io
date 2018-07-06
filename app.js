@@ -38,3 +38,60 @@ changeWorkButtons.forEach(button => {
     })
   })
 })
+
+function fetchPostsFromTumblr(limit = 3) {
+  return fetch(`https://api.tumblr.com/v2/blog/x0r.tumblr.com/posts?limit=${limit}&tag=show_on_homepage&api_key=rPSt5BHEMqYFbAR6UVccYzEiLXWw6CSE92RTWbz9QOUim6W7TQ`)
+}
+
+function PostModel(post) {
+  return {
+    type: post.type,
+    href: post.post_url,
+    title: post.type === 'photo'
+      ? toDOM(post.caption).innerText
+      : post.title,
+    content: post.type === 'photo'
+      ? post.photos[0].original_size.url
+      : post.summary
+  }
+}
+
+function toDOM(html) {
+  const el = document.createElement('div')
+  el.innerHTML = html
+  return el.firstElementChild
+}
+
+function blogPostTemplate(post) {
+  return `
+    <section class="blog-post-container">
+      <div class="blog-post blog-post--${post.type}">
+        <h3  class="blog-post__title">
+          <a href="${post.href}">${post.title}</a>
+        </h3>
+        <div class="blog-post__content">
+          ${
+            post.type === 'photo'
+              ? `<a href="${post.href}"><img src="${post.content}" /></a>`
+              : post.content
+          }
+        </div>
+      </div>
+    </section>
+  `
+}
+
+function blogPostsTemplate(posts) {
+  return posts.reduce((html, post) => html + blogPostTemplate(post), '')
+}
+
+function renderBlogPosts() {
+  const el = document.getElementById('blog-posts-container')
+  fetchPostsFromTumblr()
+    .then(res => res.json())
+    .then(data => {
+      el.innerHTML = blogPostsTemplate(data.response.posts.map(post => PostModel(post)))
+    })
+}
+
+renderBlogPosts()
