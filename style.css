@@ -31,6 +31,14 @@ a {
     color: mediumvioletred;
 }
 
+a:hover {
+    color: #de94c3;
+}
+
+a:active {
+    color: #7d0350;
+}
+
 button {
     appearance: none;
     background: none;
@@ -52,6 +60,20 @@ button {
         width: 100%;
         padding: 0 1em;
     }
+}
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: -500px;
+    padding: .5em 1.5em;
+    background: #eee;
+    font-size: 1.5em;
+}
+
+.skip-link:focus {
+    top: 10px;
+    left: 10px;
 }
 
 .masthead {
