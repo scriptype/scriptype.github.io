@@ -321,11 +321,18 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 1em;
+    padding: 0 40px;
     font-size: 1.2em;
     line-height: 24px;
     text-transform: uppercase;
     letter-spacing: 0.2em;
+}
+
+@media (max-width: 720px) {
+    .work-title {
+        font-size: 1em;
+        letter-spacing: 0.15em;
+    }
 }
 
 .github-content {
