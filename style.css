@@ -169,12 +169,30 @@ button {
     top: 0;
     left: -15%;
     width: 33%;
-    transform:
-        rotate(206.5deg);
+    transform: rotate(206.5deg);
+}
+
+@media (max-width: 720px) {
+    .works-section__video-container {
+        transform: rotate(10deg);
+    }
 }
 
 .works-section__video {
     width: 100%;
+}
+
+.works-section__video-fallback {
+    display: none;
+}
+
+@media (max-width: 720px) {
+    .works-section__video {
+        display: none;
+    }
+    .works-section__video-fallback {
+        display: block;
+    }
 }
 
 .works-section__overlay {
