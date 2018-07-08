@@ -1,16 +1,26 @@
 const worksContainer = document.getElementById('works-container')
 const workContainers = document.querySelectorAll('[data-work-container]')
 
-function fixWorksContainerHeight(container, siblings) {
-  const heights = Array.from(siblings).map(s => s.scrollHeight)
-  const minHeight = container.dataset.containerHeight || heights.sort((a, b) => a + b)[0]
-  worksContainer.style.cssText += `; height: ${minHeight}px;`
+function fixWorksContainerHeight(container) {
+  worksContainer.style.cssText += `; height: 0px;`
+  requestAnimationFrame(() => {
+    const minHeight = container.scrollHeight
+    worksContainer.style.cssText += `; height: ${minHeight}px;`
+  })
 }
 
-fixWorksContainerHeight(
-  document.querySelector('[data-work-container]'),
-  workContainers
-)
+fixWorksContainerHeight(workContainers[0])
+
+let windowWidth = window.innerWidth
+window.addEventListener('resize', event => {
+  if (windowWidth !== window.innerWidth) {
+    requestAnimationFrame(() => {
+      windowWidth = window.innerWidth
+      const container = document.querySelector('.work-container--active')
+      fixWorksContainerHeight(container)
+    })
+  }
+})
 
 
 const worksButtons = document.querySelectorAll('[data-works-button]')
@@ -23,7 +33,7 @@ worksButtons.forEach(button => {
     workContainers.forEach(con => con.classList.remove('work-container--active'))
     button.classList.add('works-button--active')
     container.classList.add('work-container--active')
-    fixWorksContainerHeight(container, workContainers)
+    fixWorksContainerHeight(container)
   })
 })
 

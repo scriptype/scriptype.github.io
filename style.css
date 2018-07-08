@@ -122,12 +122,17 @@ button {
     padding: 5em 0;
 }
 
+@media (max-width: 720px) {
+    .section {
+        padding: 3em 0;
+    }
+}
+
 .about-me-section {
 }
 
 .works-section {
     overflow: hidden;
-    overflow-y: visible;
 }
 
 .works-section-container {
@@ -218,7 +223,6 @@ button {
 
 .works-container {
     position: relative;
-    min-height: 720px;
 }
 
 .work-container {
@@ -241,7 +245,7 @@ button {
 
 .change-work-button {
     position: absolute;
-    top: 39px;
+    top: 40px;
     z-index: 1;
     width: 32px;
     height: 32px;
@@ -302,7 +306,6 @@ button {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     transform: translateX(-100%);
     transition: transform .6s .1s, opacity .4s;
 }
@@ -323,7 +326,8 @@ button {
     align-items: center;
     padding: 0 40px;
     font-size: 1.2em;
-    line-height: 24px;
+    min-height: 115px;
+    text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.2em;
 }
@@ -333,6 +337,13 @@ button {
         font-size: 1em;
         letter-spacing: 0.15em;
     }
+}
+
+.work .codepen::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 460px;
 }
 
 .github-content {
