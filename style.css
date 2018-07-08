@@ -271,7 +271,6 @@ button {
 .work-container {
     position: absolute;
     width: 100%;
-    height: 100%;
     opacity: 0;
     transition: all .5s;
     transform: translateX(-100%);
@@ -346,7 +345,6 @@ button {
     top: 0;
     opacity: 0;
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     transform: translateX(-100%);
@@ -386,15 +384,19 @@ button {
     content: "";
     display: block;
     width: 100%;
-    height: 500px;
+    height: 470px;
 }
 
 .github-content {
-    padding: 2em 0;
+    padding: 2em 0 0;
 }
 
 .github-item {
     padding: 1em;
+}
+
+.github-item:last-child {
+    padding-bottom: 0;
 }
 
 .github-item__title {

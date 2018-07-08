@@ -2,7 +2,6 @@ const worksContainer = document.getElementById('works-container')
 const workContainers = document.querySelectorAll('[data-work-container]')
 
 function fixWorksContainerHeight(container) {
-  worksContainer.style.cssText += `; height: 0px;`
   requestAnimationFrame(() => {
     const minHeight = container.scrollHeight
     worksContainer.style.cssText += `; height: ${minHeight}px;`
