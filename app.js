@@ -1,7 +1,19 @@
-const last = array => array[array.length - 1]
+const worksContainer = document.getElementById('works-container')
+const workContainers = document.querySelectorAll('[data-work-container]')
+
+function fixWorksContainerHeight(container, siblings) {
+  const heights = Array.from(siblings).map(s => s.scrollHeight)
+  const minHeight = container.dataset.containerHeight || heights.sort((a, b) => a + b)[0]
+  worksContainer.style.cssText += `; height: ${minHeight}px;`
+}
+
+fixWorksContainerHeight(
+  document.querySelector('[data-work-container]'),
+  workContainers
+)
+
 
 const worksButtons = document.querySelectorAll('[data-works-button]')
-const workContainers = document.querySelectorAll('[data-work-container]')
 worksButtons.forEach(button => {
   const container = Array.from(workContainers).find(container => {
     return container.dataset.workContainer === button.dataset.worksButton
@@ -11,8 +23,10 @@ worksButtons.forEach(button => {
     workContainers.forEach(con => con.classList.remove('work-container--active'))
     button.classList.add('works-button--active')
     container.classList.add('work-container--active')
+    fixWorksContainerHeight(container, workContainers)
   })
 })
+
 
 const changeWorkButtons = document.querySelectorAll('[data-change-work-button]')
 const works = document.querySelectorAll('[data-work]')
@@ -38,6 +52,7 @@ changeWorkButtons.forEach(button => {
     })
   })
 })
+
 
 function fetchPostsFromTumblr(limit = 3) {
   return fetch(`https://api.tumblr.com/v2/blog/x0r.tumblr.com/posts?limit=${limit}&tag=show_on_homepage&api_key=rPSt5BHEMqYFbAR6UVccYzEiLXWw6CSE92RTWbz9QOUim6W7TQ`)
