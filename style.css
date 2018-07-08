@@ -57,6 +57,18 @@ button {
     border-bottom: 1px solid #eee;
 }
 
+@media (max-width: 960px) {
+    .masthead {
+        height: 400px;
+    }
+}
+
+@media (max-width: 720px) {
+    .masthead {
+        height: 300px;
+    }
+}
+
 .masthead__overlay {
     position: absolute;
     width: 100%;
@@ -70,10 +82,23 @@ button {
     width: 720px;
 }
 
-@media (max-width: 741px) {
+@media (max-width: 960px) {
+    .title-container {
+        font-size: .8em;
+    }
+}
+
+@media (max-width: 720px) {
     .title-container {
         width: 100%;
         padding: 0 1em;
+        font-size: .7em;
+    }
+}
+
+@media (max-width: 480px) {
+    .title-container {
+        font-size: .6em;
     }
 }
 
