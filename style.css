@@ -37,6 +37,9 @@ button {
     font: inherit;
     color: inherit;
     border: none;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
 }
 
 .content-container {
@@ -205,7 +208,6 @@ button {
 .works-buttons {
     display: flex;
     justify-content: center;
-    position: relative;
     border-bottom: 1px solid #ddd;
 }
 
