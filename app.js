@@ -130,6 +130,20 @@ function renderPhotographyWorks() {
     .then(data => {
       isLoadedPhotography = true
       el.innerHTML = photographyWorksTemplate(data.response.posts.map(post => PostModel(post)))
+      const photoWorkContainer = Array.from(workContainers).find(con =>
+        con.dataset.workContainer === 'photography'
+      )
+      // Firefox doesn't render empty auto grid rows as height as not empty ones,
+      // causing container to collapse. It's needed to fix container height while
+      // items are being loaded.
+      let counter = 20
+      const fixContainerHeight = setInterval(() => {
+        if (counter--) {
+          fixWorksContainerHeight(photoWorkContainer)
+        } else {
+          clearInterval(fixContainerHeight)
+        }
+      }, 200)
     })
 }
 
