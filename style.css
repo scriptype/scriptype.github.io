@@ -50,6 +50,10 @@ button {
     vertical-align: middle;
 }
 
+strong {
+    font-weight: bold;
+}
+
 .content-container {
     width: 960px;
     margin: 0 auto;
@@ -637,4 +641,12 @@ button {
 .contact-section-container {
     position: relative;
     z-index: 1;
+}
+
+.contact-form-info {
+    font-size: 1em;
+}
+
+.contact-iframe {
+    margin: 0 -8px;
 }
