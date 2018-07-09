@@ -54,6 +54,10 @@ strong {
     font-weight: bold;
 }
 
+.hidden {
+    display: none;
+}
+
 .content-container {
     width: 960px;
     margin: 0 auto;
@@ -643,10 +647,6 @@ strong {
     z-index: 1;
 }
 
-.contact-form-info {
-    font-size: 1em;
-}
-
-.contact-iframe {
-    margin: 0 -8px;
+.email::after {
+    content: "@gmail.com"
 }

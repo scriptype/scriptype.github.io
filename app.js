@@ -170,3 +170,13 @@ function renderBlogPosts() {
 }
 
 renderBlogPosts()
+
+let shownEmail = false
+const showEmail = setInterval(() => {
+  if (shownEmail) {
+    clearInterval(showEmail)
+  } else if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+    document.getElementById('email').innerText = 'scriptyper'
+    shownEmail = true
+  }
+}, 1234 + Math.random() * 2345)
