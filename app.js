@@ -106,7 +106,7 @@ function photographyWorkTemplate(post) {
     <figure class="photography-item">
       <img src="${post.content}" alt="${post.title}" />
       <figcaption class="photography-item__title">
-        <a href="${post.image_permalink}">${post.title}</a>
+        <a href="${post.image_permalink || post.href}">${post.title}</a>
       </figcaption>
     </figure>
   `
