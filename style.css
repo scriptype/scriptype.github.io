@@ -400,9 +400,12 @@ strong {
 
 .work--active {
     opacity: 1;
-    visibility: visible;
     transform: translateX(0);
     transition: transform .4s, visibility .4s, opacity .6s .1s;
+}
+
+.work-container--active .work--active {
+    visibility: visible;
 }
 
 .work-title {
