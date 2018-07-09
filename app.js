@@ -113,7 +113,6 @@ function photographyWorkTemplate(post) {
 }
 
 function photographyWorksTemplate(posts) {
-  console.log(posts)
   return `
     <div class="photography-items">
       ${ posts.reduce((html, post) => html + photographyWorkTemplate(post), '') }
