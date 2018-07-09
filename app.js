@@ -67,12 +67,20 @@ changeWorkButtons.forEach(button => {
 })
 
 
-function fetchPostsFromTumblr(limit = 3) {
-  return fetch(`https://api.tumblr.com/v2/blog/x0r.tumblr.com/posts?limit=${limit}&tag=show_on_homepage&api_key=rPSt5BHEMqYFbAR6UVccYzEiLXWw6CSE92RTWbz9QOUim6W7TQ`)
+function fetchPostsFromTumblr({ type, limit = 3, tag }) {
+  const baseUrl = 'https://api.tumblr.com/v2/blog/x0r.tumblr.com/posts'
+  const params = [
+    `limit=${limit}`,
+    `api_key=rPSt5BHEMqYFbAR6UVccYzEiLXWw6CSE92RTWbz9QOUim6W7TQ`
+  ]
+  if (type) params.push(`type=${type}`)
+  if (tag) params.push(`tag=${tag}`)
+  const requestUrl = [ baseUrl, params.join('&') ].join('?')
+  return fetch(requestUrl)
 }
 
 function PostModel(post) {
-  return {
+  return Object.assign({}, {
     type: post.type,
     href: post.post_url,
     title: post.type === 'photo'
@@ -81,7 +89,10 @@ function PostModel(post) {
     content: post.type === 'photo'
       ? post.photos[0].original_size.url
       : post.summary
-  }
+  }, post.type === 'photo' ? {
+    alt_sizes: post.photos[0].alt_sizes,
+    image_permalink: post.image_permalink
+  } : {})
 }
 
 function toDOM(html) {
@@ -89,6 +100,43 @@ function toDOM(html) {
   el.innerHTML = html
   return el.firstElementChild
 }
+
+function photographyWorkTemplate(post) {
+  return `
+    <figure class="photography-item">
+      <img src="${post.content}" alt="${post.title}" />
+      <figcaption class="photography-item__title">
+        <a href="${post.image_permalink}">${post.title}</a>
+      </figcaption>
+    </figure>
+  `
+}
+
+function photographyWorksTemplate(posts) {
+  console.log(posts)
+  return `
+    <div class="photography-items">
+      ${ posts.reduce((html, post) => html + photographyWorkTemplate(post), '') }
+    </div>
+  `
+}
+
+function renderPhotographyWorks() {
+  if (isLoadedPhotography) {
+    return
+  }
+  const el = document.getElementById('photography-container')
+  fetchPostsFromTumblr({ type: 'photo', tag: 'photography', limit: 9 })
+    .then(res => res.json())
+    .then(data => {
+      isLoadedPhotography = true
+      el.innerHTML = photographyWorksTemplate(data.response.posts.map(post => PostModel(post)))
+    })
+}
+
+let isLoadedPhotography = false
+const photographyButton = document.getElementById('photography-works-button')
+photographyButton.addEventListener('click', renderPhotographyWorks)
 
 function blogPostTemplate(post) {
   return `
@@ -115,7 +163,7 @@ function blogPostsTemplate(posts) {
 
 function renderBlogPosts() {
   const el = document.getElementById('blog-posts-container')
-  fetchPostsFromTumblr()
+  fetchPostsFromTumblr({ tag: 'show_on_homepage' })
     .then(res => res.json())
     .then(data => {
       el.innerHTML = blogPostsTemplate(data.response.posts.map(post => PostModel(post)))
