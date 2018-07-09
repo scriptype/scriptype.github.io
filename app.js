@@ -28,9 +28,13 @@ worksButtons.forEach(button => {
     return container.dataset.workContainer === button.dataset.worksButton
   })
   button.addEventListener('click', e => {
-    worksButtons.forEach(btn => btn.classList.remove('works-button--active'))
+    worksButtons.forEach(btn => {
+      btn.classList.remove('works-button--active')
+      btn.removeAttribute('aria-expanded')
+    })
     workContainers.forEach(con => con.classList.remove('work-container--active'))
     button.classList.add('works-button--active')
+    button.setAttribute('aria-expanded', true)
     container.classList.add('work-container--active')
     fixWorksContainerHeight(container)
   })

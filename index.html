@@ -27,14 +27,12 @@
       </a>
 
       <div class="masthead">
-          <div class="masthead__videos">
+          <div class="masthead__videos" aria-hidden="true">
               <video
-                  aria-hidden="true"
                   class="masthead__video"
                   src="orbit.mp4"
                   autoplay muted loop></video>
               <img
-                  aria-hidden="true"
                   src="orbit-fallback.gif"
                   class="masthead__fallback" />
           </div>
@@ -65,14 +63,12 @@
 
       <section class="section works-section">
           <div class="works-section-container content-container">
-              <div class="works-section__video-container">
+              <div class="works-section__video-container" aria-hidden="true">
                   <video
-                      aria-hidden="true"
                       class="works-section__video"
                       src="pattern.mp4"
                       autoplay muted loop></video>
                   <img
-                      aria-hidden="true"
                       src="pattern-fallback.gif"
                       class="works-section__video-fallback" />
               </div>
@@ -84,16 +80,21 @@
                       <button
                           type="button"
                           class="works-button works-button--active"
-                          data-works-button="codepen">
-                          <svg class="works-button__icon" height="20" viewBox="0 0 1792 1792" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M216 1169l603 402v-359l-334-223zm-62-144l193-129-193-129v258zm819 546l603-402-269-180-334 223v359zm-77-493l272-182-272-182-272 182zm-411-275l334-223v-359l-603 402zm960 93l193 129v-258zm-138-93l269-180-603-402v359zm485-180v546q0 41-34 64l-819 546q-21 13-43 13t-43-13l-819-546q-34-23-34-64v-546q0-41 34-64l819-546q21-13 43-13t43 13l819 546q34 23 34 64z"/></svg>
+                          data-works-button="codepen"
+                          id="codepen-works-button"
+                          aria-expanded="true"
+                          aria-controls="codepen-works">
+                          <svg role="presentation" class="works-button__icon" height="20" viewBox="0 0 1792 1792" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M216 1169l603 402v-359l-334-223zm-62-144l193-129-193-129v258zm819 546l603-402-269-180-334 223v359zm-77-493l272-182-272-182-272 182zm-411-275l334-223v-359l-603 402zm960 93l193 129v-258zm-138-93l269-180-603-402v359zm485-180v546q0 41-34 64l-819 546q-21 13-43 13t-43-13l-819-546q-34-23-34-64v-546q0-41 34-64l819-546q21-13 43-13t43 13l819 546q34 23 34 64z"/></svg>
                           CodePen
                       </button>
 
                       <button
                           type="button"
                           class="works-button"
-                          data-works-button="github">
-                          <svg class="works-button__icon" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+                          id="github-works-button"
+                          data-works-button="github"
+                          aria-controls="github-works">
+                          <svg role="presentation" class="works-button__icon" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
                           GitHub
                       </button>
                   </div>
@@ -102,7 +103,10 @@
 
                       <div
                           class="work-container has-next work-container--active"
-                          data-work-container="codepen">
+                          data-work-container="codepen"
+                          id="codepen-works"
+                          role="region"
+                          aria-labelledby="codepen-works-button">
                           <button
                               type="button"
                               class="change-work-button change-work-button--prev"
@@ -170,7 +174,10 @@
 
                       <div
                           class="work-container"
-                          data-work-container="github">
+                          data-work-container="github"
+                          id="github-works"
+                          role="region"
+                          aria-labelledby="github-works-button">
 
                           <ul class="github-content">
                               <li class="github-item">
@@ -267,14 +274,12 @@
       <section class="section contact-section">
           <a name="contact"></a>
           <div class="content-container">
-              <div class="contact-section__video-container">
+              <div class="contact-section__video-container" aria-hidden="true">
                   <video
-                      aria-hidden="true"
                       class="contact-section__video"
                       src="cop.mp4"
                       autoplay muted loop></video>
                   <img
-                      aria-hidden="true"
                       src="cop-fallback.gif"
                       class="contact-section__fallback" />
               </div>
