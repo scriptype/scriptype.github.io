@@ -312,6 +312,7 @@ strong {
     position: absolute;
     width: 100%;
     opacity: 0;
+    visibility: hidden;
     transition: all .5s;
     transform: translateX(-100%);
 }
@@ -322,6 +323,7 @@ strong {
 
 .work-container--active {
     opacity: 1;
+    visibility: visible;
     transform: translateX(0);
 }
 
