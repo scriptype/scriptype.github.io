@@ -657,3 +657,7 @@ strong {
 .email::after {
     content: "@gmail.com"
 }
+
+.footer-section {
+    text-align: center;
+}
