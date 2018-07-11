@@ -659,5 +659,11 @@ strong {
 }
 
 .footer-section {
+    padding-bottom: 1em;
+}
+
+.build-info {
+    font-size: 1rem;
     text-align: center;
+    color: #999;
 }
