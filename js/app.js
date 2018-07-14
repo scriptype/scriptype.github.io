@@ -133,7 +133,7 @@ function renderPhotographyWorks() {
       const photoWorkContainer = Array.from(workContainers).find(con =>
         con.dataset.workContainer === 'photography'
       )
-      // Firefox doesn't render empty auto grid rows as height as not empty ones,
+      // Firefox doesn't render empty auto grid rows as tall as not empty ones,
       // causing container to collapse. It's needed to fix container height while
       // items are being loaded.
       let counter = 20
