@@ -137,11 +137,11 @@ function renderPhotographyWorks() {
       // causing container to collapse. It's needed to fix container height while
       // items are being loaded.
       let counter = 20
-      const fixContainerHeight = setInterval(() => {
-        if (counter--) {
-          fixWorksContainerHeight(photoWorkContainer)
+      const fixContainerHeightInterval = setInterval(() => {
+        if (!counter-- || document.querySelector('.work-container--active') !== photoWorkContainer) {
+          clearInterval(fixContainerHeightInterval)
         } else {
-          clearInterval(fixContainerHeight)
+          fixWorksContainerHeight(photoWorkContainer)
         }
       }, 200)
     })
