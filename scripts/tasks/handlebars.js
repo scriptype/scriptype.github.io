@@ -10,9 +10,12 @@ const {
 const html = fs.readFileSync(htmlInput, 'utf-8')
 const template = Handlebars.compile(html)
 
-const output = template({
+const templateData = {
   lastCommitHash,
-  lastBuildTime: new Date().toUTCString()
-})
+  lastBuildTime: new Date().toUTCString(),
+  yearsOfExperience: new Date().getUTCFullYear() - 2013
+}
+
+const output = template(templateData)
 
 fs.writeFileSync(htmlOutput, output)
