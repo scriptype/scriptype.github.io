@@ -12,8 +12,7 @@ const template = Handlebars.compile(html)
 
 const templateData = {
   lastCommitHash,
-  lastBuildTime: new Date().toUTCString(),
-  yearsOfExperience: new Date().getUTCFullYear() - 2013
+  lastBuildTime: new Date().toUTCString()
 }
 
 const output = template(templateData)
