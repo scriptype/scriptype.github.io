@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font: 100 normal 24px/1.5 times, georgia, serif;
+    color: #111;
+}
+
+h1 {
+    font-size: 1.5em;
+}
+
+h2 {
+    font-size: 1.25em;
+    margin-top: 2em;
+}
+
+.content-container {
+    width: 720px;
+    margin: 0 auto;
+    padding: 1em 0 6em;
+}
+
+@media (max-width: 751px) {
+    .content-container {
+        width: 100%;
+        padding: 1em 1em 6em;
+    }
+}
+
+.css-email::after {
+    content: "scriptyper@gmail.com"
+}
