@@ -1,0 +1,17 @@
+body {
+    font-family: "Operator Mono", menlo, monaco, monospace;
+}
+
+.overlay-1 {
+    top: 10%;
+    left: 10%;
+}
+
+.overlay-2 {
+    bottom: 10%;
+    right: 10%;
+}
+
+.overlay-3 {
+    display: none;
+}

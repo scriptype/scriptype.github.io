@@ -1,0 +1,29 @@
+body {
+    font-family: "Times New Roman", times, serif;
+}
+
+.overlay-1 {
+    font-size: 16vmin;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-170%);
+    text-shadow: 1vmin 1vmin 0 black;
+}
+
+.overlay-2 {
+    bottom: 7%;
+    left: 50%;
+    transform: translateX(60%);
+}
+
+@media (max-width: 880px) {
+    .overlay-2 {
+        left: auto;
+        right: 5%;
+        transform: none;
+    }
+}
+
+.overlay-3 {
+    display: none;
+}

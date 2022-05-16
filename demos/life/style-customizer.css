@@ -1,0 +1,25 @@
+body {
+    font-family: "Operator Mono", menlo, monaco, monospace;
+    font-weight: bold;
+}
+
+.overlay-1 {
+    font-size: 20vmin;
+    top: 30%;
+    left: 20%;
+    transform: scaleY(1.1);
+    color: white;
+    background: black;
+}
+
+.overlay-2 {
+    font-size: 10vmin;
+    bottom: 30%;
+    left: 40%;
+    background: white;
+    color: black;
+}
+
+.overlay-3 {
+    display: none;
+}

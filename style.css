@@ -1,0 +1,54 @@
+@import url("reset.css");
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    font-family: helvetica, arial, sans-serif;
+    font-weight: 100;
+    background: black;
+}
+
+.overlay {
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+}
+
+.overlay.entering {
+    animation: appear 1s .5s forwards;
+}
+
+.overlay.entered {
+    opacity: 1;
+}
+
+.text {
+    font-size: clamp(24px, 10vmin, 72px);
+    letter-spacing: -.2vw;
+    color: white;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.demo-bg {
+    position: absolute;
+    inset: 0;
+}
+
+.demo {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(1) contrast(1.6) brightness(0.8);
+    animation: appear 1s linear forwards;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
