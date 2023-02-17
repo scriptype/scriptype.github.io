@@ -2,7 +2,7 @@
   "name": "scriptype.github.io",
   "version": "1.0.0",
   "scripts": {
-    "start": "node ./scripts/handlebars && serve ."
+    "start": "node ./scripts/handlebars && http-server ."
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,6 @@
   },
   "homepage": "https://scriptype.github.io",
   "devDependencies": {
-    "handlebars": "^4.7.6",
-    "serve": "^14.2.0"
+    "handlebars": "^4.7.6"
   }
 }
