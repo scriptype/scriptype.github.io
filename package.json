@@ -1,11 +1,8 @@
 {
   "name": "scriptype.github.io",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
   "scripts": {
-    "dev": "lastCommitHash=`sh scripts/tasks/get-last-commit-hash.sh` salinger dev",
-    "build": "lastCommitHash=`sh scripts/tasks/get-last-commit-hash.sh` salinger build"
+    "start": "node ./scripts/handlebars && serve ."
   },
   "repository": {
     "type": "git",
@@ -21,9 +18,9 @@
   "bugs": {
     "url": "https://github.com/scriptype/scriptype.github.io/issues"
   },
-  "homepage": "https://github.com/scriptype/scriptype.github.io#readme",
+  "homepage": "https://scriptype.github.io",
   "devDependencies": {
     "handlebars": "^4.7.6",
-    "salinger": "^2.2.0"
+    "serve": "^14.2.0"
   }
 }
