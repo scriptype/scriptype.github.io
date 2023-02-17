@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap');
+
+:root {
+    --body-background-color: #fff;
+    --body-text-color: #000;
+    --main-width: 640px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --body-background-color: #161310;
+        --body-text-color: #939190;
+    }
+}
+
+body {
+    font-family: "PT Serif", "Times New Roman", georgia, serif;
+    font-size: clamp(12px, 2.5vw, 100%);
+    line-height: 1.5;
+    background: var(--body-background-color);
+    color: var(--body-text-color);
+}
+
+main {
+    margin: 0 auto;
+    padding: 1rem;
+    box-sizing: border-box;
+    width: min(100%, calc(var(--main-width) + 2rem));
+}
+
+h1 {
+    font-family: "Playfair Display", "Times New Roman", georgia, serif;
+    font-size: 2.4em;
+    font-weight: 900;
+}
+
+p {
+    font-size: 1.2em;
+}
