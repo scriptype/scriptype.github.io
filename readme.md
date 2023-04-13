@@ -29,9 +29,7 @@ It looks like this:
 ```sh
 #!/bin/sh
 chmod -x .git/hooks/post-commit # disable hook
-echo "compiling"
 node -e "require('./compile')()"
-echo "committing"
 git commit -am "Add build info"
 chmod +x .git/hooks/post-commit # re-enable hook
 ```
