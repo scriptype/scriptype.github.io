@@ -2,6 +2,7 @@
   "name": "scriptype.github.io",
   "version": "1.0.0",
   "scripts": {
+    "build": "node compile",
     "start": "node start & http-server ."
   },
   "repository": {
