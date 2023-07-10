@@ -62,6 +62,22 @@ strong {
     display: none;
 }
 
+.keyword-links a {
+    color: inherit;
+    text-decoration-style: dotted;
+    box-shadow: none;
+    transition: all .1s;
+}
+
+.keyword-links a:hover {
+    --bg: #222;
+    background: var(--bg);
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 0 0 5px var(--bg);
+    border-radius: 0.1px;
+}
+
 .content-container {
     width: 960px;
     margin: 0 auto;
@@ -190,8 +206,7 @@ strong {
     }
 }
 
-.about-me-section {
-}
+.about-me-section {}
 
 .works-section {
     overflow: hidden;
