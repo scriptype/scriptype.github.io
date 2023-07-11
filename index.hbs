@@ -26,35 +26,87 @@
           Skip to: Contact
       </a>
 
-      <div class="masthead" id="title">
-          <div class="masthead__videos" aria-hidden="true">
-              <video
-                  aria-hidden="true"
-                  class="masthead__video"
-                  src="assets/orbit.mp4"
-                  autoplay muted loop></video>
-              <img
-                  aria-hidden="true"
-                  src="assets/orbit-fallback.gif"
-                  class="masthead__fallback" />
-          </div>
+      <div class="masthead-container">
+          <div class="masthead masthead--default masthead--active" data-header-id="default">
+              <div class="masthead__visuals" aria-hidden="true">
+                <template id="tile-0">
+                  <div class="tile tile-0"></div>
+                </template>
 
-          <div class="masthead__overlay">
-              <div class="content-container">
-                  <div class="title-container">
-                      <h1 class="masthead__name">Mustafa Enes Ertarhanacı</h1>
-                      <h2 class="masthead__summary">
-                        UX Engineer.
-                      </h2>
+                <template id="tile-1">
+                  <div class="tile tile-1"></div>
+                </template>
+
+                <template id="tile-2">
+                  <div class="tile tile-2"></div>
+                </template>
+
+                <template id="tile-3">
+                  <div class="tile tile-3"></div>
+                </template>
+                <div class="masthead__visual wfc-container"></div>
+                <img
+                    aria-hidden="true"
+                    src="assets/wfc-fallback.gif"
+                    class="masthead__fallback" />
+              </div>
+
+              <div class="masthead__overlay">
+                  <div class="content-container">
+                      <div class="title-container">
+                          <h1 class="masthead__name">Mustafa Enes Ertarhanacı</h1>
+                          <h2 class="masthead__summary">
+                            UX Engineer.
+                          </h2>
+                      </div>
                   </div>
               </div>
           </div>
+
+          <div class="masthead masthead--creativecoding" data-header-id="creativeCoding">
+              <div class="masthead__visuals" aria-hidden="true">
+                  <video
+                      aria-hidden="true"
+                      class="masthead__visual"
+                      src="assets/orbit.mp4"
+                      autoplay muted loop></video>
+                  <img
+                      aria-hidden="true"
+                      src="assets/orbit-fallback.gif"
+                      class="masthead__fallback" />
+              </div>
+
+              <div class="masthead__overlay">
+                  <div class="content-container">
+                      <div class="title-container">
+                          <h1 class="masthead__name">Mustafa Enes Ertarhanacı</h1>
+                          <h2 class="masthead__summary">
+                            Creative Coder.
+                          </h2>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="masthead masthead--astrophotography" data-header-id="astrophotography">
+              <div class="masthead__overlay">
+                  <div class="content-container">
+                      <div class="title-container">
+                          <h1 class="masthead__name">Mustafa Enes Ertarhanacı</h1>
+                          <h2 class="masthead__summary">
+                            Amateur Astrophotographer.
+                          </h2>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
       </div>
 
       <section class="section about-me-section" id="whoami" aria-labelledby="whoami-title">
           <div class="content-container">
               <h2 class="section__title" id="whoami-title">Who Am I?</h2>
-              <p class="keyword-links">A UX/UI Engineer, pop-sci geek, amateur <a href="https://www.astrobin.com/users/mustastum/" target="_blank">astro-photographer</a>, <a href="https://codepen.io/pavlovsk" target="_blank">creative coder</a>, <a href="https://github.com/scriptype/vimrc" target="_blank">Vim addict</a>.</p>
+              <p class="keyword-links">A UX/UI Engineer, pop-sci geek, <a href="https://github.com/scriptype/vimrc" target="_blank">Vim addict</a>, amateur <a href="https://www.astrobin.com/users/mustastum/" target="_blank" data-header="astrophotography" style="--i: 0;">astrophotographer</a>, <a href="https://codepen.io/pavlovsk" target="_blank" data-header="creativeCoding" style="--i: 1;">creative coder</a>.</p>
               <p class="keyword-links">Having fun making <a href="https://codepen.io/collection/XLwLwj" target="_blank">generative art</a>, <a href="https://codepen.io/pavlovsk/pen/oNQbVrm" target="_blank">simulating the nature</a> using <a href="https://codepen.io/pavlovsk/pen/aWQvJJ" target="_blank">cellular automata</a>.</p>
               <p class="keyword-links">Special emphasis on <a href="https://github.com/scriptype">open source</a>, <a href="https://slides.com/mustastum/accessibility" target="_blank">accessibility</a>, <a href="https://codepen.io/pavlovsk/pen/poZwXmP" target="_blank">interaction design</a>, <a href="https://github.com/scriptype/sorted-colors/tree/master/src/app" target="_blank">clean code</a>.</p>
               <p>Some companies I worked at: <a href="https://www.cavai.com" target="_blank">Cavai</a>, <a href="https://www.cubi.casa" target="_blank">CubiCasa</a>, <a href="https://timma.fi" target="_blank">Timma</a>, <a href="https://wolt.com" target="_blank">Wolt</a>, <a href="https://protein.tech/" target="_blank">Protein</a>, <a href="https://vngrs.com/" target="_blank">VNGRS</a>.</p>
@@ -392,6 +444,8 @@
           </p>
       </footer>
 
+      <script src="js/utils.js"></script>
       <script src="js/app.js"></script>
+      <script src="js/wfc.js"></script>
   </body>
 </html>

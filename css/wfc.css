@@ -1,0 +1,82 @@
+.wfc-container {
+  --tile-width: 100%;
+  --tile-height: 100%;
+  --tile-bg: transparent;
+  --tile-pattern-color: #222;
+  --rows: 16;
+  --cols: 16;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  background: radial-gradient(circle at center, #eee, white 50%);
+}
+
+.wfc-container .tile {
+  --pattern-width: calc(var(--tile-width) / 5);
+  width: var(--tile-width);
+  height: var(--tile-height);
+  position: relative;
+  overflow: hidden;
+  background: var(--tile-bg);
+}
+
+.wfc-container .tile::after,
+.wfc-container .tile::before {
+  content: "";
+  position: absolute;
+  background: var(--tile-pattern-color);
+}
+
+.wfc-container .tile-0::after {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--pattern-width);
+  height: 50%;
+}
+
+.wfc-container .tile-1::after {
+  top: 0;
+  right: 0;
+  width: calc(50% + var(--pattern-width) / 2);
+  height: calc(50% + var(--pattern-width) / 2);
+}
+
+.wfc-container .tile-1::before {
+  top: calc(var(--pattern-width) / 2);
+  right: calc(var(--pattern-width) * 2);
+  z-index: 1;
+  width: calc(50% - var(--pattern-width) * 1.25);
+  height: calc(50% - var(--pattern-width) * 1.25);
+  background: hsl(var(--hue), 30%, 60%);
+}
+
+.wfc-container .tile-2::after {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--pattern-width);
+  height: 100%;
+}
+
+.wfc-container .tile-3::after {
+  box-sizing: border-box;
+  top: 0;
+  left: 50%;
+  transform:
+    translateX(-47.25%)
+    rotate(45deg);
+  width: 200%;
+  height: calc(var(--pattern-width) * .5);
+}
+
+.wfc-container table {
+  width: 60vmin;
+  height: 60vmin;
+}
+
+.wfc-container td {
+  width: calc(60vmin / var(--cols));
+  height: calc(60vmin / var(--rows));
+}

@@ -1,5 +1,6 @@
 @import url("fonts.css");
 @import url("reset.css");
+@import url("wfc.css");
 
 * {
     box-sizing: border-box;
@@ -63,18 +64,31 @@ strong {
 }
 
 .keyword-links a {
+    --hover-bg: #444;
+    --hover-fg: white;
     color: inherit;
     text-decoration-style: dotted;
     box-shadow: none;
     transition: all .1s;
 }
 
-.keyword-links a:hover {
-    --bg: #444;
+a[data-header] {
+    --hue-diff: 15;
+    --hue: calc(120 + var(--i) * var(--hue-diff));
+    --bg: hsl(var(--hue) 100% 90%);
+    --hover-bg: hsl(var(--hue) 100% 80%);
+    --hover-fg: inherit;
     background: var(--bg);
-    color: white;
+    box-shadow: 0 0 0 3px var(--bg);
     text-decoration: none;
-    box-shadow: 0 0 0 5px var(--bg);
+    border-radius: 0.1px;
+}
+
+.keyword-links a:hover {
+    background: var(--hover-bg);
+    color: var(--hover-fg);
+    text-decoration: none;
+    box-shadow: 0 0 0 5px var(--hover-bg);
     border-radius: 0.1px;
 }
 
@@ -104,20 +118,52 @@ strong {
     left: 10px;
 }
 
-.masthead {
-    height: 500px;
+.masthead-container {
     position: relative;
+    height: 500px;
+}
+
+.masthead {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
     border-bottom: 1px solid #eee;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s .5s;
+}
+
+.masthead--active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.masthead--astrophotography {
+    background: url('../assets/orion-sm.png');
+    background-size: cover;
+    background-position-y: 80%;
+}
+
+@media (min-width: 960px) {
+    .masthead--astrophotography {
+        background-image: url('../assets/orion.png');
+    }
+}
+
+.masthead--astrophotography .title-container {
+    color: white;
 }
 
 @media (max-width: 960px) {
-    .masthead {
+    .masthead-container {
         height: 400px;
     }
 }
 
 @media (max-width: 720px) {
-    .masthead {
+    .masthead-container {
         height: 300px;
     }
 }
@@ -167,20 +213,22 @@ strong {
     font-weight: 100;
 }
 
-.masthead__videos {
+.masthead__visuals {
     position: absolute;
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
 
-.masthead__video,
+.masthead__visual,
 .masthead__fallback {
+    --top-diff: 0%;
     position: absolute;
     top: 50%;
     right: 0;
-    transform: translateY(-50%);
-    transition: opacity 1s;
+    transform: translateY(
+        calc(-50% + var(--top-diff))
+    );
 }
 
 .masthead__fallback {
@@ -188,12 +236,16 @@ strong {
 }
 
 @media (max-width: 720px) {
-    .masthead__video {
+    .masthead__visual {
         display: none;
     }
     .masthead__fallback {
         display: block;
     }
+}
+
+.masthead--default .masthead__fallback {
+    --top-diff: -3%;
 }
 
 .section {
