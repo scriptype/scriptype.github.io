@@ -1,5 +1,8 @@
-const worksContainer = document.getElementById('works-container')
-const workContainers = document.querySelectorAll('[data-work-container]')
+const query = document.querySelector.bind(document)
+const queryAll = document.querySelectorAll.bind(document)
+
+const worksContainer = query('#works-container')
+const workContainers = queryAll('[data-work-container]')
 
 function fixWorksContainerHeight(container) {
   requestAnimationFrame(() => {
@@ -15,14 +18,14 @@ window.addEventListener('resize', event => {
   if (windowWidth !== window.innerWidth) {
     requestAnimationFrame(() => {
       windowWidth = window.innerWidth
-      const container = document.querySelector('.work-container--active')
+      const container = query('.work-container--active')
       fixWorksContainerHeight(container)
     })
   }
 })
 
 
-const worksButtons = document.querySelectorAll('[data-works-button]')
+const worksButtons = queryAll('[data-works-button]')
 worksButtons.forEach(button => {
   const container = Array.from(workContainers).find(container => {
     return container.dataset.workContainer === button.dataset.worksButton
@@ -41,12 +44,12 @@ worksButtons.forEach(button => {
 })
 
 
-const changeWorkButtons = document.querySelectorAll('[data-change-work-button]')
-const works = document.querySelectorAll('[data-work]')
-const codePenContainer = document.querySelector('[data-work-container="codepen"]')
+const changeWorkButtons = queryAll('[data-change-work-button]')
+const works = queryAll('[data-work]')
+const codePenContainer = query('[data-work-container="codepen"]')
 changeWorkButtons.forEach(button => {
   button.addEventListener('click', e => {
-    const activeWork = document.querySelector('.work--active')
+    const activeWork = query('.work--active')
     works.forEach(work => {
       work.classList.remove('work--active')
     })
@@ -138,7 +141,7 @@ function renderPhotographyWorks() {
       // items are being loaded.
       let counter = 20
       const fixContainerHeightInterval = setInterval(() => {
-        if (!counter-- || document.querySelector('.work-container--active') !== photoWorkContainer) {
+        if (!counter-- || query('.work-container--active') !== photoWorkContainer) {
           clearInterval(fixContainerHeightInterval)
         } else {
           fixWorksContainerHeight(photoWorkContainer)
