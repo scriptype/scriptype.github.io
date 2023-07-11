@@ -222,12 +222,14 @@ a[data-header] {
 
 .masthead__visual,
 .masthead__fallback {
-    --top-diff: 0%;
+    --top-offset: 0%;
+    --left-offset: 0%;
     position: absolute;
     top: 50%;
     right: 0;
-    transform: translateY(
-        calc(-50% + var(--top-diff))
+    transform: translate(
+        var(--left-offset),
+        calc(-50% + var(--top-offset))
     );
 }
 
@@ -245,7 +247,8 @@ a[data-header] {
 }
 
 .masthead--default .masthead__fallback {
-    --top-diff: -3%;
+    --top-offset: -3%;
+    --left-offset: 15%;
 }
 
 .section {
