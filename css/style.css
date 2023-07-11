@@ -141,9 +141,16 @@ a[data-header] {
 }
 
 .masthead--astrophotography {
-    background: url('../assets/orion-sm.png');
     background-size: cover;
     background-position-y: 80%;
+    /* Intentional delay in mobile so it won't flicker initially */
+    animation: set-astrophotography-bg 0.1s 1s linear forwards;
+}
+
+@keyframes set-astrophotography-bg {
+    to {
+        background: url('../assets/orion-sm.png');
+    }
 }
 
 @media (min-width: 960px) {
