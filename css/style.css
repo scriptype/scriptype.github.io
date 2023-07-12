@@ -156,7 +156,7 @@ a[data-header] {
     .masthead--astrophotography {
         background-size: 80%;
         background-position: 80% 60%;
-        background-image: url('../assets/orion.png');
+        background-image: url('../assets/orion.jpg');
     }
 
     .masthead--astrophotography .masthead__overlay {
@@ -170,7 +170,7 @@ a[data-header] {
 
 @keyframes set-astrophotography-bg {
     to {
-        background-image: url('../assets/orion-sm.png');
+        background-image: url('../assets/orion-sm.jpg');
     }
 }
 
