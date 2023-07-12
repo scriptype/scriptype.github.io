@@ -149,7 +149,7 @@ a[data-header] {
 
 @keyframes set-astrophotography-bg {
     to {
-        background: url('../assets/orion-sm.png');
+        background-image: url('../assets/orion-sm.png');
     }
 }
 
