@@ -143,19 +143,34 @@ a[data-header] {
 .masthead--astrophotography {
     background-size: cover;
     background-position-y: 80%;
-    /* Intentional delay in mobile so it won't flicker initially */
-    animation: set-astrophotography-bg 0.1s 1s linear forwards;
 }
 
-@keyframes set-astrophotography-bg {
-    to {
-        background-image: url('../assets/orion-sm.png');
+@media (max-width: 959px) {
+    .masthead--astrophotography {
+        /* Intentional delay in mobile so it won't flicker initially */
+        animation: set-astrophotography-bg 0.1s 1s linear forwards;
     }
 }
 
 @media (min-width: 960px) {
     .masthead--astrophotography {
+        background-size: 80%;
+        background-position: 80% 60%;
         background-image: url('../assets/orion.png');
+    }
+
+    .masthead--astrophotography .masthead__overlay {
+        background: radial-gradient(
+            circle at 60%,
+            transparent 20%,
+            #171716 60%
+        );
+    }
+}
+
+@keyframes set-astrophotography-bg {
+    to {
+        background-image: url('../assets/orion-sm.png');
     }
 }
 
