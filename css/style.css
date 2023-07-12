@@ -73,7 +73,7 @@ strong {
 }
 
 a[data-header] {
-    --hue-diff: 15;
+    --hue-diff: 30;
     --hue: calc(120 + var(--i) * var(--hue-diff));
     --bg: hsl(var(--hue) 100% 90%);
     --hover-bg: hsl(var(--hue) 100% 80%);
