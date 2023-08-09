@@ -24,4 +24,7 @@ const watch = () => {
 }
 
 compileIndex()
-watch()
+
+if (process.argv[2] !== 'once') {
+  watch()
+}

@@ -2,7 +2,7 @@
   "name": "scriptype.github.io",
   "version": "1.0.0",
   "scripts": {
-    "build": "node compile",
+    "build": "node start once",
     "start": "node start & http-server ."
   },
   "repository": {
