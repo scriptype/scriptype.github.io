@@ -105,7 +105,7 @@
   function photographyWorkTemplate(post) {
     return `
       <figure class="photography-item">
-        <img src="${post.content}" alt="${post.title}" />
+        <img src="${post.content}" alt="${post.title}">
         <figcaption class="photography-item__title">
           <a href="${post.image_permalink || post.href}">${post.title}</a>
         </figcaption>
@@ -162,7 +162,7 @@
           <div class="blog-post__content">
             ${
               post.type === 'photo'
-                ? `<a href="${post.href}"><img src="${post.content}" /></a>`
+                ? `<a href="${post.href}"><img src="${post.content}" alt="${post.title}"></a>`
                 : post.content
             }
           </div>
