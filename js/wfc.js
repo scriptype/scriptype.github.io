@@ -262,7 +262,13 @@
 
   init()
 
-  query('.masthead').addEventListener('click', init)
+  const masthead = query('.masthead')
+  masthead.addEventListener('click', init)
+  masthead.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      init()
+    }
+  })
 })({
   utils: window.utils
 })
