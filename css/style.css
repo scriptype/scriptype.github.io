@@ -200,7 +200,7 @@ a[data-header] {
 }
 
 .title-container {
-    width: 720px;
+    width: max-content;
 }
 
 @media (max-width: 960px) {
@@ -211,7 +211,7 @@ a[data-header] {
 
 @media (max-width: 720px) {
     .title-container {
-        width: 100%;
+        max-width: 100%;
         padding: 0 1em;
         font-size: .7em;
     }
@@ -233,6 +233,30 @@ a[data-header] {
 .masthead__summary {
     font-size: 2.5em;
     font-weight: 100;
+}
+
+.masthead--default .masthead__name {
+    padding-right: .3em;
+    background: #fffb;
+    border-radius: .5em;
+}
+
+@supports (backdrop-filter: blur(1px)) {
+    .masthead--default .masthead__name {
+        backdrop-filter: blur(5px);
+        background: #fffa;
+    }
+}
+
+@media (max-width: 720px) {
+    .masthead--default .masthead__name {
+        display: inline;
+        border-radius: .2em;
+    }
+
+    .masthead--default .masthead__summary {
+        margin-top: .3em;
+    }
 }
 
 .masthead__visuals {
