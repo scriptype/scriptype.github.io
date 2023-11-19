@@ -368,11 +368,27 @@ a[data-header] {
     transition: all .5s;
 }
 
-@media (max-width: 540px) {
+@media (max-width: 585px) {
     .works-button {
         font-size: 1em;
         padding: .75em 1.25em;
         min-width: 120px;
+    }
+}
+
+@media (max-width: 470px) {
+    .works-button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: .5em 1em;
+    }
+}
+
+@media (max-width: 410px) {
+    .works-button {
+        padding: .33em .5em;
     }
 }
 

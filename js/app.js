@@ -44,7 +44,7 @@
 
   const changeWorkButtons = queryAll('[data-change-work-button]')
   const works = queryAll('[data-work]')
-  const codePenContainer = query('[data-work-container="codepen"]')
+  const creativeCodingContainer = query('[data-work-container="creativeCoding"]')
   changeWorkButtons.forEach(button => {
     button.addEventListener('click', e => {
       const activeWork = query('.work--active')
@@ -58,8 +58,8 @@
       const newActiveIndex = Array.from(works).indexOf(newActiveWork)
       const hasPrev = works[newActiveIndex - 1]
       const hasNext = works[newActiveIndex + 1]
-      codePenContainer.classList.toggle('has-prev', hasPrev)
-      codePenContainer.classList.toggle('has-next', hasNext)
+      creativeCodingContainer.classList.toggle('has-prev', hasPrev)
+      creativeCodingContainer.classList.toggle('has-next', hasNext)
       changeWorkButtons.forEach(btn => {
         const isNextBtn = btn.dataset.changeWorkButton === 'next'
         btn.disabled = (isNextBtn && !hasNext) || (!isNextBtn && !hasPrev)
